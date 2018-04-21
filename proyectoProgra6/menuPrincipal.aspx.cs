@@ -13,6 +13,7 @@ namespace proyectoProgra6
     {
         private MesaBLL mesaBLL = new MesaBLL();
         protected String codigo;
+            
         protected void Page_Load(object sender, EventArgs e)
         {
             codigo = "";
