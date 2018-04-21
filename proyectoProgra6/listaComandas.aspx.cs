@@ -18,6 +18,7 @@ namespace proyectoProgra6
         {
             if (Request.QueryString["idMesa"] == null)
                 Response.Write("<script languaje=javascript>window.alert('Seleccione la mesa a la que se le desea ver las comandas');window.location.href='menuPrincipal.aspx'</script>");
+            else { 
             if (!IsPostBack)
             {
 
@@ -25,6 +26,7 @@ namespace proyectoProgra6
             }
 
         }
+    }
 
         protected void RefrescarLista()
         {

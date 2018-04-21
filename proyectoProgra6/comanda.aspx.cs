@@ -17,22 +17,25 @@ namespace proyectoProgra6
         private ComandaBLL comanadaBLL = new ComandaBLL();
         private DetalleComandaBLL detalleComandaBLL = new DetalleComandaBLL();
 
+     
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["idMesa"] == null)
-                Response.Write("<script languaje=javascript>window.alert('Seleccione una mesa a la cual debe de ser asginada la mesa');window.location.href='menuPrincipal.aspx'</script>");
-            if (!IsPostBack)
+                Response.Write("<script languaje=javascript>window.alert('Seleccione la mesa a la que se le desea ver las comandas');window.location.href='menuPrincipal.aspx'</script>");
+            else
             {
-                Session["detallesComanda"] = new List<DetalleComanda>();
-                ddlTipoProducto.DataSource = tipoProductoBLL.ListaTipoProducto();
-                ddlTipoProducto.DataTextField = "Descripcion";
-                ddlTipoProducto.DataValueField = "IdTipoProducto";
-                ddlTipoProducto.DataBind();
-                refrescarProductos();
+                if (!IsPostBack)
+                {
+                    Session["detallesComanda"] = new List<DetalleComanda>();
+                    ddlTipoProducto.DataSource = tipoProductoBLL.ListaTipoProducto();
+                    ddlTipoProducto.DataTextField = "Descripcion";
+                    ddlTipoProducto.DataValueField = "IdTipoProducto";
+                    ddlTipoProducto.DataBind();
+                    refrescarProductos();
+                }
+
             }
-
         }
-
         private void refrescarProductos()
         {
             ddlProducto.DataSource = productoBLL.ListaProductosXTipo(Int32.Parse(ddlTipoProducto.SelectedValue));
