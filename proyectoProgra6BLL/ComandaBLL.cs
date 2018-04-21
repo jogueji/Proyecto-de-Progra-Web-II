@@ -25,5 +25,25 @@ namespace proyectoProgra6BLL
         {
             return comandaDAL.ListaComandas(idMesa);
         }
+
+        public void ActualizarComanda(Comanda comanda)
+        {
+            Comanda coman=comandaDAL.BuscarComandaDAL(comanda.IdComanda);
+            coman.IdEstadoComanda = comanda.IdEstadoComanda;
+            comandaDAL.ActualizarComanda(coman);
+        }
+
+        public String DetalleComanda(int idComanda)
+        {
+            ProductoDAL proDAL = new ProductoDAL();
+            String cadena = "Comanda #" + idComanda+"\n";
+            DetalleComandaDAL detalleDAL = new DetalleComandaDAL();
+            List<DetalleComanda> detalles =detalleDAL.ListaDetalleComandas(idComanda);
+            foreach (DetalleComanda item in detalles)
+            {
+                cadena += item.Cantidad +" "+proDAL.BuscarProducto(item.IdProducto).Nombre+(item.Descripcion == "" ? "" : "-") + item.Descripcion+"\n";
+            }
+            return cadena;
+        }
     }
 }

@@ -10,7 +10,7 @@
                     <p>Capacidad</p>
                     <div>
                         <span>
-                            <asp:TextBox ID="txtCantidad" runat="server">1</asp:TextBox>
+                            <asp:TextBox ID="txtCantidad" runat="server" TextMode="Number" min="1" max="20">1</asp:TextBox>
                         </span>
                     </div>
                     <div>

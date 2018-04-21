@@ -23,5 +23,10 @@ namespace proyectoProga6DAL
         {
             _db.Insert<DetalleComanda>(detalleComanda);
         }
+
+        public List<DetalleComanda> ListaDetalleComandas(int idComanda)
+        {
+            return _db.Select<DetalleComanda>(a => a.IdComanda == idComanda);
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using proyectoProgra6BLL;
+using proyectoProgra6Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,7 +46,14 @@ namespace proyectoProgra6
 
         protected void dgvComandas_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            //comandaBLL.ActualizarComanda();
+            Comanda comanda = new Comanda()
+            {
+                IdComanda = Int32.Parse((dgvComandas.Rows[e.RowIndex].Cells[2]).Text),
+                IdEstadoComanda= Int32.Parse(((DropDownList)dgvComandas.Rows[e.RowIndex].FindControl("ddlEstado")).SelectedValue)
+            };
+            comandaBLL.ActualizarComanda(comanda);
+            MesaBLL mesaBLL = new MesaBLL();
+            mesaBLL.ActualizarEstadoMesa(Int32.Parse(Request.QueryString["idMesa"]),comanda.IdEstadoComanda);
             dgvComandas.EditIndex = -1;
             RefrescarLista();
         }
@@ -77,8 +85,18 @@ namespace proyectoProgra6
                     ddlEstado.DataSource = estadoComandaBLL.Lista();
                     ddlEstado.DataValueField= "IdEstadoComanda";
                     ddlEstado.DataTextField= "Descripcion";
+                    ddlEstado.SelectedValue = DataBinder.Eval(e.Row.DataItem, "IdEstadoComanda").ToString();
                     ddlEstado.DataBind();
                 }
+            }
+        }
+
+        protected void dgvComandas_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "detalle")
+            {
+                txtDetalle.Visible = true;
+                txtDetalle.Text=comandaBLL.DetalleComanda(Int32.Parse(dgvComandas.Rows[Int32.Parse(e.CommandArgument.ToString())].Cells[2].Text));
             }
         }
     }

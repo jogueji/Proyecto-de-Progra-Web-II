@@ -28,5 +28,15 @@ namespace proyectoProga6DAL
         {
             return _db.Select<Comanda>(a=>a.IdMesa==idMesa &&a.IdEstadoComanda!=5);
         }
+
+        public void ActualizarComanda(Comanda comanda)
+        {
+            _db.Update<Comanda>(comanda);
+        }
+
+        public Comanda BuscarComandaDAL(int idComanda)
+        {
+            return _db.Select<Comanda>(a=>a.IdComanda==idComanda).LastOrDefault();
+        }
     }
 }

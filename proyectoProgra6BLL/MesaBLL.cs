@@ -43,5 +43,30 @@ namespace proyectoProgra6BLL
             mesa.IdEstadoMesa = idEstadoMesa;
             mesaDAL.ActualizarMesa(mesa);
         }
+
+        public void ActualizarEstadoMesa(int idMesa, int idEstadoComanda)
+        {
+            bool bandera = true;
+            Mesa mesa = mesaDAL.BuscarMesa(idMesa);
+            ComandaDAL comanDAL = new ComandaDAL();
+            List<Comanda> comandas=comanDAL.ListaComandas(idMesa);
+            foreach (Comanda item in comandas)
+            {
+                if (item.IdEstadoComanda == 1)
+                {
+                    mesa.IdEstadoMesa = 3;
+                    break;
+                }
+                if (item.IdEstadoComanda == 2 || item.IdEstadoComanda == 3)
+                {
+                    mesa.IdEstadoMesa = 2;
+                    bandera = false;
+                }
+
+                if (item.IdEstadoComanda == 4 && bandera)
+                    mesa.IdEstadoMesa = 4;
+            }
+            mesaDAL.ActualizarMesa(mesa);
+        }
     }
 }

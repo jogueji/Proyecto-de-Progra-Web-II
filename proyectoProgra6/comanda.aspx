@@ -22,8 +22,8 @@
                             <p>Producto</p>
                             <div>
                                 <span>
-                                    <asp:TextBox ID="txtCantidad" runat="server" TextMode="Number" Style="display: initial; width: 10%" min="1">1</asp:TextBox>
-                                    <asp:DropDownList ID="ddlProducto" runat="server" AutoPostBack="True" Style="display: initial; width: 80%"></asp:DropDownList>
+                                    <asp:TextBox ID="txtCantidad" runat="server" TextMode="Number" Style="display: initial; width: 20%" min="1" max="100">1</asp:TextBox>
+                                    <asp:DropDownList ID="ddlProducto" runat="server" AutoPostBack="True" Style="display: initial; width: 70%"></asp:DropDownList>
                                 </span>
                             </div>
                             <div>

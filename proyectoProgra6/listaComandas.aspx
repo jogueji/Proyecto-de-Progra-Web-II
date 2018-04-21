@@ -9,9 +9,10 @@
                 <div class="contact-form">
                     <asp:GridView ID="dgvComandas" runat="server" AutoGenerateColumns="False" OnRowCancelingEdit="dgvComandas_RowCancelingEdit" OnRowUpdating="dgvComandas_RowUpdating" AllowPaging="True"
                         OnRowEditing="dgvComandas_RowEditing" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px"
-                        CellPadding="3" CellSpacing="2" OnPageIndexChanging="dgvComandas_PageIndexChanging" OnRowDataBound="dgvComandas_RowDataBound">
+                        CellPadding="3" CellSpacing="2" OnPageIndexChanging="dgvComandas_PageIndexChanging" OnRowDataBound="dgvComandas_RowDataBound" OnRowCommand="dgvComandas_RowCommand">
                         <Columns>
                             <asp:CommandField ShowEditButton="True" />
+                            <asp:ButtonField CommandName="detalle" HeaderText="Detalle" Text="Ver detalle" />
                             <asp:BoundField DataField="IdComanda" HeaderText="Comanda" ReadOnly="True" />
                             <asp:BoundField DataField="IdMesa" HeaderText="Mesa" ReadOnly="True" />
                             <asp:TemplateField HeaderText="Nombre de usuario">
@@ -40,6 +41,11 @@
                         <SortedDescendingCellStyle BackColor="#F1E5CE" />
                         <SortedDescendingHeaderStyle BackColor="#93451F" />
                     </asp:GridView>
+                    <div>
+                        <span>
+                            <asp:TextBox ID="txtDetalle" runat="server" Enabled="False" TextMode="MultiLine" Visible="False" ></asp:TextBox>  
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
