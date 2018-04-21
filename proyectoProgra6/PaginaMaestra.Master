@@ -1,0 +1,103 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaestra.master.cs" Inherits="proyectoProgra6.PaginaMaestra" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><%: Page.Title %> | J y J Restaurante</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/slidermodernizr.custom.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <!------ Background slider ------->
+        <div class="slider">
+            <ul id="cbp-bislideshow" class="cbp-bislideshow">
+                <li>
+                    <img src="images/1.jpg" alt="image01" /></li>
+                <li>
+                    <img src="images/2.jpg" alt="image02" /></li>
+                <li>
+                    <img src="images/3.jpg" alt="image03" /></li>
+                <li>
+                    <img src="images/4.jpg" alt="image04" /></li>
+                <li>
+                    <img src="images/5.jpg" alt="image05" /></li>
+                <li>
+                    <img src="images/6.jpg" alt="image06" /></li>
+            </ul>
+            <script src="js/jquery.imagesloaded.min.js"></script>
+            <script src="js/cbpBGSlideshow.min.js"></script>
+            <script>
+                $(function () {
+                    cbpBGSlideshow.init();
+                });
+            </script>
+        </div>
+
+        <!------ Menu ------->
+        <div class="header_top">
+            <div class="wrap">
+                <div class="logo1">
+                    <a href="inicio.aspx">
+                        <img style="width: 70%" src="images/logo.png" /></a>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li><a href="inicio.aspx">Inicio</a></li>
+                        <li><a href="menuPrincipal.aspx">Menu principal</a></li>
+                        <%if ((Session["tipoUsuario"]) != null)
+                            {
+                                if ((int)(Session["tipoUsuario"]) == 1)
+                                {%>
+                        <li><a href="usuario.aspx">Usuarios</a></li>
+                        <li><a href="producto.aspx">Productos</a></li>
+                        <li><a href="mesas.aspx">Mesas</a></li>
+                        <%}
+                            }%>
+                        <li><a href="reportes.aspx">Reportes</a></li>
+                        <li><a href="about.aspx">Sobre nosotros</a></li>
+                        <li><a href="login.aspx">Cerrar sesión</a></li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <!--Titulo-->
+        <div class="header_top">
+            <div class="wrap">
+                <div class="menu">
+                    <h3><%:Session["usuario"]%></h3>
+                    <h3><%:Page.Title%></h3>
+                </div>
+            </div>
+        </div>
+
+        <!------ Main ------->
+        <div class="wrap">
+            <div class="main">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+
+        <!------ Footer ------->
+        <div class="copy_right">
+            <div class="wrap">
+                <p>&copy; <%: DateTime.Now.Year %> - Programación Web II</p>
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>
