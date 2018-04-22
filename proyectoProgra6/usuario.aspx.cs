@@ -11,6 +11,7 @@ namespace proyectoProgra6
         private UsuarioBLL usuarioBLL = new UsuarioBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if ((Session["tipoUsuario"]) != null)
             {
                 if ((int)(Session["tipoUsuario"]) != 1)
@@ -38,6 +39,7 @@ namespace proyectoProgra6
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
+            string msjError = "";
 
             Usuario usu = new Usuario()
             {
@@ -49,13 +51,26 @@ namespace proyectoProgra6
                 Estado = chkEstado.Checked
             };
             if (btnIngresar.Text == "Ingresar")
-                usuarioBLL.InsertarUsuario(usu);
+            {
+                if (usuarioBLL.BuscarUsuarioPorNombre(txtNombreUsuario.Text) == null)
+                {
+                    usuarioBLL.InsertarUsuario(usu);
+                    Response.Redirect("usuario.aspx");
+                }
+                else
+                {
+                    mensajeError.Visible = true;
+                    textoMensajeError.InnerHtml = "Ya existe un usuario con este nombre de usuario!";
+                }
+            }
+
             else
             {
                 usu.IdUsuario = Int32.Parse(hdIdUsuario.Value);
                 usuarioBLL.ActualizarUsuario(usu);
+                Response.Redirect("usuario.aspx");
             }
-            Response.Redirect("usuario.aspx");
+            
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

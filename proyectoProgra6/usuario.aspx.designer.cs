@@ -13,6 +13,24 @@ namespace proyectoProgra6 {
     public partial class usuario {
         
         /// <summary>
+        /// mensajeError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mensajeError;
+        
+        /// <summary>
+        /// textoMensajeError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl textoMensajeError;
+        
+        /// <summary>
         /// hdIdUsuario control.
         /// </summary>
         /// <remarks>

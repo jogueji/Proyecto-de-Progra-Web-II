@@ -47,6 +47,10 @@ namespace proyectoProgra6BLL
         {
             return usuarioDAL.BuscarUsuario(idUsuario);
         }
+        public Usuario BuscarUsuarioPorNombre(string nombreUsuario)
+        {
+            return usuarioDAL.BuscarUsuarioPorNombre(nombreUsuario);
+        }
 
         public string NombreUsuario(int idUsuario)
         {

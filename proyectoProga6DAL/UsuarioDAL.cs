@@ -35,6 +35,10 @@ namespace proyectoProga6DAL
         {
             return _db.Select<Usuario>(a=>a.IdUsuario==idUsuario).LastOrDefault();
         }
+        public Usuario BuscarUsuarioPorNombre(string nombreUsuario)
+        {
+            return _db.Select<Usuario>(a => a.NombreUsuario == nombreUsuario).LastOrDefault();
+        }
 
         public void InsertarUsuario(Usuario usuario)
         {
