@@ -84,13 +84,18 @@
     <Content Include="images\4.jpg" />
     <Content Include="images\5.jpg" />
     <Content Include="images\6.jpg" />
+    <Content Include="images\aboutImg.png" />
+    <Content Include="images\comandaImg.png" />
     <Content Include="images\icon_food.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\mesaInactiva.jpg" />
     <Content Include="images\mesaLibre.jpg" />
     <Content Include="images\mesaOcupada.jpg" />
+    <Content Include="images\productsImg.png" />
     <Content Include="images\reporteImg1.png" />
     <Content Include="images\reporteImg2.png" />
+    <Content Include="images\tableImg.png" />
+    <Content Include="images\usersImg.png" />
     <Content Include="inicio.aspx" />
     <Content Include="js\cbpBGSlideshow.min.js" />
     <Content Include="js\jquery.imagesloaded.min.js" />
@@ -105,11 +110,11 @@
     <Content Include="PaginaMaestra.Master" />
     <Content Include="producto.aspx" />
     <Content Include="reportes.aspx" />
-    <Content Include="Reportes\reporte1.aspx" />
-    <Content Include="Reportes\reporte2.aspx" />
-    <Content Include="Reportes\reporte3.aspx" />
-    <Content Include="Reportes\reporte4.aspx" />
-    <Content Include="Reportes\reporte5.aspx" />
+    <Content Include="reporte1.aspx" />
+    <Content Include="reporte2.aspx" />
+    <Content Include="reporte3.aspx" />
+    <Content Include="reporte4.aspx" />
+    <Content Include="reporte5.aspx" />
     <Content Include="usuario.aspx" />
     <Content Include="fonts\CaviarDreams-webfont.ttf" />
     <Content Include="fonts\FontleroyBrown-webfont.ttf" />
@@ -199,39 +204,39 @@
     <Compile Include="reportes.aspx.designer.cs">
       <DependentUpon>reportes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\reporte1.aspx.cs">
+    <Compile Include="reporte1.aspx.cs">
       <DependentUpon>reporte1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Reportes\reporte1.aspx.designer.cs">
+    <Compile Include="reporte1.aspx.designer.cs">
       <DependentUpon>reporte1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\reporte2.aspx.cs">
+    <Compile Include="reporte2.aspx.cs">
       <DependentUpon>reporte2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Reportes\reporte2.aspx.designer.cs">
+    <Compile Include="reporte2.aspx.designer.cs">
       <DependentUpon>reporte2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\reporte3.aspx.cs">
+    <Compile Include="reporte3.aspx.cs">
       <DependentUpon>reporte3.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Reportes\reporte3.aspx.designer.cs">
+    <Compile Include="reporte3.aspx.designer.cs">
       <DependentUpon>reporte3.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\reporte4.aspx.cs">
+    <Compile Include="reporte4.aspx.cs">
       <DependentUpon>reporte4.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Reportes\reporte4.aspx.designer.cs">
+    <Compile Include="reporte4.aspx.designer.cs">
       <DependentUpon>reporte4.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\reporte5.aspx.cs">
+    <Compile Include="reporte5.aspx.cs">
       <DependentUpon>reporte5.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Reportes\reporte5.aspx.designer.cs">
+    <Compile Include="reporte5.aspx.designer.cs">
       <DependentUpon>reporte5.aspx</DependentUpon>
     </Compile>
     <Compile Include="usuario.aspx.cs">
