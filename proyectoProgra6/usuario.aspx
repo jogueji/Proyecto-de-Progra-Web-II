@@ -13,22 +13,22 @@
                     <div>
                         <span>
                             <asp:TextBox ID="txtNombreUsuario" placeholder="Nombre de usuario" runat="server"></asp:TextBox>
-                        </span>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtNombreUsuario" ForeColor="Red">Este dato es requerido</asp:RequiredFieldValidator> </span>
                     </div>
                     <div>
                         <span>
                             <asp:TextBox ID="txtContrasenna" placeholder="Contraseña" runat="server"></asp:TextBox>
-                        </span>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtContrasenna" ForeColor="Red">Este dato es requerido</asp:RequiredFieldValidator></span>
                     </div>
                     <div>
                         <span>
                             <asp:TextBox ID="txtNombre" placeholder="Nombre" runat="server"></asp:TextBox>
-                        </span>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtNombre" ForeColor="Red">Este dato es requerido</asp:RequiredFieldValidator></span>
                     </div>
                     <div>
                         <span>
                             <asp:TextBox ID="txtApellidos" placeholder="Apellidos" runat="server"></asp:TextBox>
-                        </span>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtApellidos" ForeColor="Red">Este dato es requerido</asp:RequiredFieldValidator></span>
                     </div>
                     <p>Tipo de Usuario</p>
                     <div>

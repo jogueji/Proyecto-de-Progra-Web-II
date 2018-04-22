@@ -35,19 +35,20 @@
                     <div>
                         <span>
                             <asp:TextBox ID="txtNombre" placeholder="Nombre" runat="server"></asp:TextBox>
-                        </span>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Este dato es requerido" ControlToValidate="txtNombre" Text="Este dato es requerido" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator></span>
                     </div>
                     <div>
                         <span>
                             <asp:TextBox ID="txtDescripcion" placeholder="Descripción" runat="server" TextMode="MultiLine"></asp:TextBox>
-                        </span>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Este dato es requerido" ControlToValidate="txtDescripcion" Text="Este dato es requerido" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator></span>
                     </div>
                     <p>Precio</p>
                     <div>
                         <span>
                             <asp:TextBox ID="txtPrecio" Text="0" runat="server"></asp:TextBox>
-                        </span>
-                    </div>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Este dato es requerido" ControlToValidate="txtPrecio" Text="Este dato es requerido" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator></span>
+                        <br />
+                        <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="RangeValidator" MaximumValue="30000" MinimumValue="1" ControlToValidate="txtPrecio" Display="Dynamic" ForeColor="Red">El precio debe estar entre 1 y 30000 colones</asp:RangeValidator></div>
                     <p>Tipo de Producto</p>
                     <div>
                         <span>

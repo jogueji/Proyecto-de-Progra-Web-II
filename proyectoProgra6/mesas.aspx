@@ -11,7 +11,7 @@
                     <div>
                         <span>
                             <asp:TextBox ID="txtCantidad" runat="server" TextMode="Number" min="1" max="20">1</asp:TextBox>
-                        </span>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="La capacidad es requerida" ForeColor="Red" ControlToValidate="txtCantidad">Este dato es requerido</asp:RequiredFieldValidator> </span>
                     </div>
                     <div>
                         <span>
