@@ -122,6 +122,17 @@
     <Content Include="usuario.aspx" />
     <Content Include="fonts\CaviarDreams-webfont.ttf" />
     <Content Include="fonts\FontleroyBrown-webfont.ttf" />
+    <Content Include="DataSetJyJ.xsc">
+      <DependentUpon>DataSetJyJ.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSetJyJ.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetJyJ.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSetJyJ.xss">
+      <DependentUpon>DataSetJyJ.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -147,6 +158,11 @@
     </Compile>
     <Compile Include="comanda.aspx.designer.cs">
       <DependentUpon>comanda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetJyJ.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetJyJ.xsd</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -251,7 +267,9 @@
       <DependentUpon>usuario.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="ReportProducto.rdlc" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\proyectoProgra6BLL\proyectoProgra6BLL.csproj">
       <Project>{88544346-2387-42da-af54-db815dfeac09}</Project>
