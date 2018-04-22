@@ -24,12 +24,14 @@
                                 <span>
                                     <asp:TextBox ID="txtCantidad" runat="server" TextMode="Number" Style="display: initial; width: 20%" min="1" max="100">1</asp:TextBox>
                                     <asp:DropDownList ID="ddlProducto" runat="server" AutoPostBack="True" Style="display: initial; width: 70%"></asp:DropDownList>
-                                </span>
-                            </div>
+                                   
+                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" Text="Este dato es requerido" ControlToValidate="txtCantidad" ForeColor="Red"></asp:RequiredFieldValidator></span>
+                                <br />
+                                <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="RangeValidator" MinimumValue="1" MaximumValue="20" Text="La cantidad debe ser entre 1 y 20" ControlToValidate="txtCantidad" ForeColor="Red"></asp:RangeValidator> </div>
                             <div>
                                 <span>
                                     <asp:TextBox ID="txtDescripcion" placeholder="Descripción" runat="server" TextMode="MultiLine"></asp:TextBox>
-                                </span>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtDescripcion" Text="Este dato es requerido" ForeColor="Red"></asp:RequiredFieldValidator></span>
                             </div>
                             <div>
                                 <span>
