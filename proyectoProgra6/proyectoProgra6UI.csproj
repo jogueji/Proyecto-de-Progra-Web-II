@@ -78,6 +78,7 @@
     <Content Include="css\slider.css" />
     <Content Include="css\style.css" />
     <Content Include="css\util.css" />
+    <Content Include="facturar.aspx" />
     <Content Include="images\1.jpg" />
     <Content Include="images\2.jpg" />
     <Content Include="images\3.jpg" />
@@ -163,6 +164,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetJyJ.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="facturar.aspx.cs">
+      <DependentUpon>facturar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="facturar.aspx.designer.cs">
+      <DependentUpon>facturar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
