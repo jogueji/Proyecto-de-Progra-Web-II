@@ -14,7 +14,7 @@ namespace proyectoProgra6
         private DetalleFacturaBLL detalleFacturaBLL = new DetalleFacturaBLL();
         private FacturaBLL facturaBLL = new FacturaBLL();
         private TarjetaBLL tarjetaBLL = new TarjetaBLL();
-        protected double total=0d;
+        protected decimal total=0;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["idMesa"] == null)
@@ -32,6 +32,7 @@ namespace proyectoProgra6
                     {
                         ddlAnno.Items.Add(i.ToString());
                     }
+                    txtDetalle.Text = detalleFacturaBLL.Detalles(Int32.Parse(Request.QueryString["idMesa"]),Session["usuario"].ToString());
                 }
             }
         }
@@ -81,8 +82,6 @@ namespace proyectoProgra6
                 txtPagoEfectivo.Enabled = false;
                 txtPagoEfectivo.Text= total.ToString("#,00");
             }
-
-
         }
     }
 }

@@ -21,5 +21,10 @@ namespace proyectoProgra6BLL
         {
             detalleComandaDAL.InsertarDetalleComanda(detalleComanda);
         }
+
+        public List<DetalleComanda> ListaDetalleComanda(int idComanda)
+        {
+            return detalleComandaDAL.ListaDetalleComandas(idComanda);
+        }
     }
 }

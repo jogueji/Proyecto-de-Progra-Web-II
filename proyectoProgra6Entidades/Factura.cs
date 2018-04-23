@@ -13,10 +13,10 @@ namespace proyectoProgra6Entidades
         public int IdMesa { get; set; }
         public int IdUsuario { get; set; }
         public DateTime Fecha { get; set; }
-        public double Total{ get; set; }
+        public decimal Total{ get; set; }
         public int IdTipoPago{ get; set; }
-        public double PagoTarjeta { get; set; }
-        public double PagoEfectivo{ get; set; }
+        public decimal PagoTarjeta { get; set; }
+        public decimal PagoEfectivo{ get; set; }
         public int IdTarjeta{ get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace proyectoProga6DAL
 {
-    class TarjetaDAL
+    public class TarjetaDAL
     {
     }
 }

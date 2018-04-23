@@ -13,6 +13,6 @@ namespace proyectoProgra6Entidades
         public int IdFactura{ get; set; }
         public int IdProducto{ get; set; }
         public int Cantidad { get; set; }
-        public double Subtotal{ get; set; }
+        public decimal Subtotal{ get; set; }
     }
 }
