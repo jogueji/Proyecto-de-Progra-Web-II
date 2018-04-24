@@ -10,8 +10,10 @@ namespace proyectoProgra6.Reportes
 {
     public partial class reporte2 : System.Web.UI.Page
     {
+        string msjError = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             DateTime fechaHoy = DateTime.Now;
             cleCalendarioFechaFinal.SelectedDate = fechaHoy;
             cleCalendarioFechaInicial.SelectedDate = fechaHoy.AddDays(-31);
@@ -27,7 +29,17 @@ namespace proyectoProgra6.Reportes
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
+            if (cleCalendarioFechaFinal.SelectedDate > DateTime.Now)
+            {
+                cleCalendarioFechaFinal.SelectedDate = DateTime.Now;
+            }
+            if (cleCalendarioFechaInicial.SelectedDate > DateTime.Now)
+            {
+                cleCalendarioFechaFinal.SelectedDate = DateTime.Now;
+            }
+
             cargarParametros();
-        }
+            
+            }
     }
 }

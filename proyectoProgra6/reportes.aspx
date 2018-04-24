@@ -25,7 +25,7 @@
 							<div class="grid_1_of_3 events_1_of_3">
 								<div class="event-time">
 								<h4><span>Reporte</span></h4>
-								  <h4>Ventas por Mesa</h4>
+								  <h4>Tipos de Pago</h4>
 							  </div>
 								<div class="event-img">
 								    <a href="reporte3.aspx"><img src="images/reporteImg1.png" alt="" /><span>Visualizar</span></a>

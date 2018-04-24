@@ -48,7 +48,7 @@
                             <asp:TextBox ID="txtPrecio" Text="0" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Este dato es requerido" ControlToValidate="txtPrecio" Text="Este dato es requerido" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator></span>
                         <br />
-                        <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="RangeValidator" MaximumValue="30000" MinimumValue="1" ControlToValidate="txtPrecio" Display="Dynamic" ForeColor="Red">El precio debe estar entre 1 y 30000 colones</asp:RangeValidator></div>
+                        <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="RangeValidator" MaximumValue="90000" MinimumValue="1" ControlToValidate="txtPrecio" Display="Dynamic" ForeColor="Red">El precio debe estar entre 1 y 90000 colones</asp:RangeValidator></div>
                     <p>Tipo de Producto</p>
                     <div>
                         <span>

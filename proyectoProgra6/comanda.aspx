@@ -31,8 +31,7 @@
                             <div>
                                 <span>
                                     <asp:TextBox ID="txtDescripcion" placeholder="Descripción" runat="server" TextMode="MultiLine"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtDescripcion" Text="Este dato es requerido" ForeColor="Red"></asp:RequiredFieldValidator></span>
-                            </div>
+                             </div>
                             <div>
                                 <span>
                                     <center>

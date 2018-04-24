@@ -10,9 +10,16 @@
         <div class="col_1_of_3 contact_1_of_3">
             <div class="contact-form">
                 <p color="white">Seleccione las fechas:</p>
+                
                 <div>
                     <span>
-                        <asp:Label ID="Label1" runat="server" Text="Fecha Inicial:  " ForeColor="#FF9900"></asp:Label><asp:TextBox ID="txtFechaInicial" runat="server"></asp:TextBox>     <asp:Label ID="Label2" runat="server" Text="Fecha Final:  " ForeColor="#FF9900"></asp:Label>  <asp:TextBox ID="txtFechaFinal" runat="server"></asp:TextBox>
+                        <asp:Label ID="Label1" runat="server" Text="Fecha Inicial:  " ForeColor="#FF9900"></asp:Label>
+                        <asp:TextBox ID="txtFechaInicial" runat="server"></asp:TextBox>   
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtFechaInicial" ForeColor="Red">Debe ingesar una fecha.</asp:RequiredFieldValidator>
+                        <br />
+                        <asp:Label ID="Label2" runat="server" Text="Fecha Final:  " ForeColor="#FF9900"></asp:Label>  
+                        <asp:TextBox ID="txtFechaFinal" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtFechaFinal" ForeColor="Red">Debe ingesar una fecha.</asp:RequiredFieldValidator>
                         <ajaxToolkit:CalendarExtender Format="dd/MM/yyyy" ID="cleCalendarioFechaInicial" runat="server" TargetControlID="txtFechaInicial" />
                         <ajaxToolkit:CalendarExtender Format="dd/MM/yyyy"  ID="cleCalendarioFechaFinal" runat="server" TargetControlID="txtFechaFinal" />
                         <br />

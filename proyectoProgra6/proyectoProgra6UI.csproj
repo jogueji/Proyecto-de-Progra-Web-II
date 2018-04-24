@@ -276,6 +276,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ReporteTipoPago.rdlc" />
     <EmbeddedResource Include="ReporteVentas.rdlc" />
     <EmbeddedResource Include="ReportProducto.rdlc" />
   </ItemGroup>
