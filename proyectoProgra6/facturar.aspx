@@ -84,9 +84,9 @@
                             <div>
                                 <span>
                                     <center>
-                                <asp:Button ID="btnPagar" runat="server" Text="Pagar" OnClick="btnPagar_Click" />
-                                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click"/>
-                            </center>
+                                        <asp:Button ID="btnPagar" runat="server" Text="Pagar" OnClick="btnPagar_Click" />
+                                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click"/>
+                                    </center>
                                 </span>
                             </div>
                         </div>

@@ -26,8 +26,7 @@ namespace proyectoProga6DAL {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-AJ8PLJM\\SQLEXPRESS;Initial Catalog=JyJRestauranteDB;User ID=s" +
-            "a;Password=123456")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=JyJRestauranteDB;User ID=sa;Password=123456")]
         public string conexion {
             get {
                 return ((string)(this["conexion"]));
