@@ -67,11 +67,15 @@
     </Compile>
     <Compile Include="ComandaDAL.cs" />
     <Compile Include="DetalleComandaDAL.cs" />
+    <Compile Include="DetalleFacturaDAL.cs" />
     <Compile Include="EstadoComandaDAL.cs" />
     <Compile Include="EstadoMesaDAL.cs" />
+    <Compile Include="FacturaDAL.cs" />
     <Compile Include="MesaDAL.cs" />
     <Compile Include="ProductoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TarjetaDAL.cs" />
+    <Compile Include="TipoPagoDAL.cs" />
     <Compile Include="TipoProductoDAL.cs" />
     <Compile Include="TipoUsuarioDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
