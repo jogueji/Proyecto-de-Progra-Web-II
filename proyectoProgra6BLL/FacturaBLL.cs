@@ -14,16 +14,5 @@ namespace proyectoProgra6BLL
         {
             facturaDAL = new FacturaDAL();
         }
-
-        public decimal TotalFactura(int idMesa)
-        {
-            decimal total = 0;
-            List<DetalleFactura> lista = ListaDetalleFactura(idMesa);
-            foreach (DetalleFactura item in lista)
-            {
-                total += item.Subtotal;
-            }
-            return total;
-        }
     }
 }

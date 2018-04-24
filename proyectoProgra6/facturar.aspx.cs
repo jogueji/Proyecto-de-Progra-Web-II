@@ -33,6 +33,7 @@ namespace proyectoProgra6
                         ddlAnno.Items.Add(i.ToString());
                     }
                     txtDetalle.Text = detalleFacturaBLL.Detalles(Int32.Parse(Request.QueryString["idMesa"]),Session["usuario"].ToString());
+                    total = detalleFacturaBLL.total;
                 }
             }
         }
