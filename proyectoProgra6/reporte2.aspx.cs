@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WebForms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,14 @@ namespace proyectoProgra6.Reportes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            DateTime fechaHoy = new DateTime ();
+            //cleCalendarioFechaFinal.SelectedDate = fechaHoy
 
+
+            //cleCalendarioFechaFinal.SelectedDate = 
+          //ReportParameter[] rp = new ReportParameter[] { new ReportParameter("FechaInicial", "12/12/18"), new ReportParameter ("FechaFinal","13/12/18")};
+          //ReportViewer1.LocalReport.SetParameters(rp);
+          // ReportViewer1.LocalReport.Refresh();
         }
     }
 }
