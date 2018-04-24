@@ -773,8 +773,9 @@ body {
 .contact-form {
     position: relative;
     padding-bottom: 30px;
-    top: 3px;
-    left: -1px;
+    top: 2px;
+    left: 1px;
+    width: 267px;
 }
 
     .contact-form div {

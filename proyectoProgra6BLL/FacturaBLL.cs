@@ -1,4 +1,5 @@
 ﻿using proyectoProga6DAL;
+using proyectoProgra6Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,8 +17,8 @@ namespace proyectoProgra6BLL
         }
 
         public decimal TotalFactura(int idMesa)
-        {
-            decimal total = 0;
+       {
+           decimal total = 0;
             List<DetalleFactura> lista = ListaDetalleFactura(idMesa);
             foreach (DetalleFactura item in lista)
             {

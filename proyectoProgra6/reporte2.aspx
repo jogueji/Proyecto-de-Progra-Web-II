@@ -13,21 +13,22 @@
                 <div>
                     <span>
                         <asp:Label ID="Label1" runat="server" Text="Fecha Inicial:  " ForeColor="#FF9900"></asp:Label><asp:TextBox ID="txtFechaInicial" runat="server"></asp:TextBox>     <asp:Label ID="Label2" runat="server" Text="Fecha Final:  " ForeColor="#FF9900"></asp:Label>  <asp:TextBox ID="txtFechaFinal" runat="server"></asp:TextBox>
-                        <ajaxToolkit:CalendarExtender ID="cleCalendarioFechaInicial" runat="server" TargetControlID="txtFechaInicial" />
-                        <ajaxToolkit:CalendarExtender ID="cleCalendarioFechaFinal" runat="server" TargetControlID="txtFechaFinal" />
+                        <ajaxToolkit:CalendarExtender Format="dd/MM/yyyy" ID="cleCalendarioFechaInicial" runat="server" TargetControlID="txtFechaInicial" />
+                        <ajaxToolkit:CalendarExtender Format="dd/MM/yyyy"  ID="cleCalendarioFechaFinal" runat="server" TargetControlID="txtFechaFinal" />
                         <br />
-                        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
+                        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
                          </span>
                 </div>
             </div>
         </div>
     </div>
-    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
-        <LocalReport ReportPath="ReportJuankGay.rdlc">
+    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="1010px">
+        <LocalReport ReportPath="ReporteVentas.rdlc">
             <DataSources>
-                <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
+                <rsweb:ReportDataSource DataSourceId="ObjectDataSource2" Name="DataSetVentas" />
             </DataSources>
         </LocalReport>
     </rsweb:ReportViewer>
+    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetData" TypeName="proyectoProgra6.DataSetJyJTableAdapters.VentaTableAdapter"></asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="proyectoProgra6.DataSetJyJTableAdapters.ComandaTableAdapter"></asp:ObjectDataSource>
 </asp:Content>

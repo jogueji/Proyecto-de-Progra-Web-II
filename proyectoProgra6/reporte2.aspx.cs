@@ -12,14 +12,22 @@ namespace proyectoProgra6.Reportes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DateTime fechaHoy = new DateTime ();
-            //cleCalendarioFechaFinal.SelectedDate = fechaHoy
+            DateTime fechaHoy = DateTime.Now;
+            cleCalendarioFechaFinal.SelectedDate = fechaHoy;
+            cleCalendarioFechaInicial.SelectedDate = fechaHoy.AddDays(-31);
+        }
+        private void cargarParametros()
+        {
+            ReportParameter[] parameters = new ReportParameter[2];
+            parameters[0] = new ReportParameter("FechaInicial", txtFechaInicial.Text);
+            parameters[1] = new ReportParameter("FechaFinal", txtFechaFinal.Text);
+            this.ReportViewer1.LocalReport.SetParameters(parameters);
+            ReportViewer1.LocalReport.Refresh();
+        }
 
-
-            //cleCalendarioFechaFinal.SelectedDate = 
-          //ReportParameter[] rp = new ReportParameter[] { new ReportParameter("FechaInicial", "12/12/18"), new ReportParameter ("FechaFinal","13/12/18")};
-          //ReportViewer1.LocalReport.SetParameters(rp);
-          // ReportViewer1.LocalReport.Refresh();
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            cargarParametros();
         }
     }
 }
