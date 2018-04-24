@@ -45,5 +45,15 @@ namespace proyectoProgra6BLL
             }
             return cadena;
         }
+
+        public void CerrarComandas(int idMesa)
+        {
+            List<Comanda> comandas = ListaComandas(idMesa);
+            foreach (Comanda item in comandas)
+            {
+                item.IdEstadoComanda = 5;
+                ActualizarComanda(item);
+            }
+        }
     }
 }

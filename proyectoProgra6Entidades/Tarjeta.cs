@@ -8,7 +8,6 @@ namespace proyectoProgra6Entidades
 {
     public class Tarjeta
     {
-        [ServiceStack.DataAnnotations.AutoIncrement]
         public string IdTarjeta{ get; set; }
         public string Codigo{ get; set; }
         public int MesCaduca { get; set; }

@@ -18,15 +18,30 @@ namespace proyectoProgra6BLL
 
         public bool ValidarTarjeta(Tarjeta tarj)
         {
-            if (Existe(tarj.IdTarjeta))
+            try
             {
-                Tarjeta tarj1 = BuscarTarjeta(tarj.IdTarjeta);
-                if (tarj1.Codigo == tarj.Codigo && tarj1.MesCaduca == tarj.MesCaduca && tarj1.AnnoCaduca == tarj.AnnoCaduca)
-                    return true;
+                long i = long.Parse(tarj.IdTarjeta);
+                i =long.Parse(tarj.Codigo);
+                if (tarj.IdTarjeta.Length == 16 && tarj.Codigo.Length == 3)
+                {
+                    if (Existe(tarj.IdTarjeta))
+                    {
+                        Tarjeta tarj1 = BuscarTarjeta(tarj.IdTarjeta);
+                        if (tarj1.Codigo == tarj.Codigo && tarj1.MesCaduca == tarj.MesCaduca && tarj1.AnnoCaduca == tarj.AnnoCaduca)
+                            return true;
+                        else
+                            return false;
+                    }
+                    else
+                        return true;
+                }
                 else
                     return false;
             }
-            return true;
+            catch
+            {
+                return false;
+            }
             
         }
 

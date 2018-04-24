@@ -32,6 +32,7 @@ namespace proyectoProgra6BLL
 
         public void GuardarFactura(Factura fact)
         {
+            fact.Total = TotalFactura(fact.IdMesa);
             int idFact=facturaDAL.InsetarFactura(fact);
             List<DetalleFactura> lista = detalleFacturaBLL.ListaDetalleFactura(fact.IdMesa);
             foreach (DetalleFactura item in lista)

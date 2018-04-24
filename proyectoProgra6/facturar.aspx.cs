@@ -41,15 +41,17 @@ namespace proyectoProgra6
 
         protected void btnPagar_Click(object sender, EventArgs e)
         {
+
+            int idMesa = Int32.Parse(Request.QueryString["idMesa"]);
             mensajeError.Visible = false;
             textoMensajeError.InnerHtml = "";
             Factura fact = new Factura()
             {
                 Fecha = DateTime.Now,
-                IdMesa = Int32.Parse(Request.QueryString["idMesa"]),
+                IdMesa = idMesa,
                 IdTipoPago = Int32.Parse(ddlTipoPago.SelectedValue),
                 PagoTarjeta = decimal.Parse(txtPagoTarjeta.Text),
-                PagoEfectivo = decimal.Parse(txtPagoTarjeta.Text),
+                PagoEfectivo = decimal.Parse(txtPagoEfectivo.Text),
                 IdUsuario = Int32.Parse(Session["idUsuario"].ToString())
             };
             if (fact.IdTipoPago != 3 && IsValid)
@@ -60,7 +62,7 @@ namespace proyectoProgra6
                     IdTarjeta = txtNumeroTar.Text.Trim(),
                     Codigo = txtCodigo.Text.Trim(),
                     AnnoCaduca = Int32.Parse(ddlAnno.SelectedValue),
-                    MesCaduca = Int32.Parse(ddlAnno.SelectedValue)
+                    MesCaduca = Int32.Parse(ddlMes.SelectedValue)
                 };
                 if (tarjBLL.ValidarTarjeta(tarj))
                 {
@@ -79,11 +81,17 @@ namespace proyectoProgra6
             if (textoMensajeError.InnerHtml == "")
             {
                 facturaBLL.GuardarFactura(fact);
+                MesaBLL mesaBLL = new MesaBLL();
+                mesaBLL.ActualizarMesa(0,idMesa, 1);
+                ComandaBLL comandaBLL = new ComandaBLL();
+                comandaBLL.CerrarComandas(idMesa);
+                Response.Redirect("menuPrincipal.aspx");
             }   
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
+            Response.Redirect("menuPrincipal.aspx");
             Response.Redirect("facturar.aspx?idMesa=" + Request.QueryString["idMesa"]);
         }
 
@@ -113,6 +121,7 @@ namespace proyectoProgra6
                 txtNumeroTar.Text = "";
                 txtCodigo.Text = "";
                 txtPagoTarjeta.Text = total.ToString();
+                txtPagoEfectivo.Text = "0";
                 txtPagoTarjeta.Enabled = false;
                 ddlMes.SelectedIndex = 0;
                 ddlAnno.SelectedIndex = 0;
@@ -122,8 +131,10 @@ namespace proyectoProgra6
             {
                 tarjeta.Visible = false;
                 efectivo.Visible = true;
-                txtPagoEfectivo.Enabled = false;
                 txtPagoEfectivo.Text = total.ToString();
+                txtPagoTarjeta.Text = "0";
+                txtPagoEfectivo.Enabled = false;
+                
             }
         }
 
