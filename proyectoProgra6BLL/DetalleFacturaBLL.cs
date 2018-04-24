@@ -11,7 +11,6 @@ namespace proyectoProgra6BLL
     public class DetalleFacturaBLL
     {
         private DetalleFacturaDAL detalleFacturaDAL;
-        public decimal total { get; set; }
         public DetalleFacturaBLL()
         {
             detalleFacturaDAL = new DetalleFacturaDAL();
@@ -19,7 +18,7 @@ namespace proyectoProgra6BLL
 
         public string Detalles(int idMesa,string nombreUsuario)
         {
-            total = 0;
+            decimal total = 0;
             ProductoDAL proDAL = new ProductoDAL();
             string cadena = "Mesa #"+idMesa+"\nMesero: "+nombreUsuario+"\nFecha: "+DateTime.Now.ToString("dd/MM/yy")+"\n";
             List<DetalleFactura> lista = ListaDetalleFactura(idMesa);
@@ -64,15 +63,9 @@ namespace proyectoProgra6BLL
             return detallesFactura;
         }
 
-        public decimal TotalFactura(int idMesa)
+        public void Insertar(DetalleFactura detalleFactura)
         {
-            decimal total = 0;
-            List<DetalleFactura> lista = ListaDetalleFactura(idMesa);
-            foreach (DetalleFactura item in lista)
-            {
-                total += item.Subtotal;
-            }
-            return total;
+            detalleFacturaDAL.InsetarFactura(detalleFactura);
         }
     }
 }

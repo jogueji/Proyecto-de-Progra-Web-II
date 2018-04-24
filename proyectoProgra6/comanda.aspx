@@ -13,6 +13,10 @@
                     </div>
                     <div class="col_1_of_3 contact_1_of_3">
                         <div class="contact-form">
+                            <div class="alert alert-danger" visible="false" id="mensajeError" runat="server">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong id="textoMensajeError" runat="server"></strong>
+                            </div>
                             <p>Tipo de Producto</p>
                             <div>
                                 <span>
@@ -31,7 +35,7 @@
                             <div>
                                 <span>
                                     <asp:TextBox ID="txtDescripcion" placeholder="Descripción" runat="server" TextMode="MultiLine"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtDescripcion" Text="Este dato es requerido" ForeColor="Red"></asp:RequiredFieldValidator></span>
+                                </span>
                             </div>
                             <div>
                                 <span>

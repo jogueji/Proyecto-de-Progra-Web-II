@@ -46,25 +46,38 @@ namespace proyectoProgra6
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            Comanda comanda = new Comanda()
+            mensajeError.Visible = false;
+            textoMensajeError.InnerHtml = "Ingrese al menos un detalle comanda";
+            if (lstDetalleComanda.Items.Count != 0)
             {
-                IdMesa = Int32.Parse(Request.QueryString["idMesa"]),
-                IdEstadoComanda = 1,
-                Fecha = DateTime.Now,
-                IdUsuario = (int)Session["idUsuario"]
-            };
-            int idComanda = comanadaBLL.InsertarComanda(comanda);
-            foreach (DetalleComanda item in ((List<DetalleComanda>)Session["detallesComanda"]))
-            {
-                item.IdComanda = idComanda;
-                detalleComandaBLL.InsertarDetalleComanda(item);
+                Comanda comanda = new Comanda()
+                {
+                    IdMesa = Int32.Parse(Request.QueryString["idMesa"]),
+                    IdEstadoComanda = 1,
+                    Fecha = DateTime.Now,
+                    IdUsuario = (int)Session["idUsuario"]
+                };
+                int idComanda = comanadaBLL.InsertarComanda(comanda);
+                foreach (DetalleComanda item in ((List<DetalleComanda>)Session["detallesComanda"]))
+                {
+                    item.IdComanda = idComanda;
+                    detalleComandaBLL.InsertarDetalleComanda(item);
+                }
+                mesaBLL.ActualizarMesa((int)Session["idUsuario"], comanda.IdMesa, 3);
+                Response.Redirect("menuPrincipal.aspx");
             }
-            mesaBLL.ActualizarMesa((int)Session["idUsuario"],comanda.IdMesa,3);
-            Response.Write("<script languaje=javascript>window.alert('Comanda ingresada correctamente');window.location.href='menuPrincipal.aspx'</script>");
+            else
+            {
+                mensajeError.Visible=true;
+                textoMensajeError.InnerHtml = "Ingrese al menos un detalle comanda";
+
+            }
+            
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
+            Response.Redirect("menuPrincipal.aspx");
             Response.Redirect("comanda.aspx?idMesa="+ Request.QueryString["idMesa"]);
         }
 
