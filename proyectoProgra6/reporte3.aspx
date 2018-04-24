@@ -10,7 +10,7 @@
                 <p>Tipo de Pago</p>
                 <div>
                     <span>
-                        <asp:DropDownList ID="ddlTipoPago" runat="server" OnSelectedIndexChanged="ddlTipoPago_SelectedIndexChanged"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlTipoPago" runat="server" OnSelectedIndexChanged="ddlTipoPago_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
                     </span>
                 </div>
             </div>
