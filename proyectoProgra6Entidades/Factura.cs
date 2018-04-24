@@ -17,6 +17,6 @@ namespace proyectoProgra6Entidades
         public int IdTipoPago{ get; set; }
         public decimal PagoTarjeta { get; set; }
         public decimal PagoEfectivo{ get; set; }
-        public int IdTarjeta{ get; set; }
+        public string IdTarjeta{ get; set; }
     }
 }
