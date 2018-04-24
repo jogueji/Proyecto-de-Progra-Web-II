@@ -90,15 +90,15 @@
     <Content Include="images\contactoImg.png" />
     <Content Include="images\icon_food.png" />
     <Content Include="images\logo.png" />
-    <Content Include="images\menuImg.png" />
+    <Content Include="images\menuImg.jpg" />
     <Content Include="images\mesaInactiva.jpg" />
     <Content Include="images\mesaLibre.jpg" />
     <Content Include="images\mesaOcupada.jpg" />
     <Content Include="images\productsImg.png" />
     <Content Include="images\reporteImg1.png" />
     <Content Include="images\reporteImg2.png" />
-    <Content Include="images\reservaImg.png" />
-    <Content Include="images\romanticaImg.png" />
+    <Content Include="images\reservaImg.jpg" />
+    <Content Include="images\romanticaImg.jpg" />
     <Content Include="images\tableImg.png" />
     <Content Include="images\usersImg.png" />
     <Content Include="inicio.aspx" />
@@ -276,6 +276,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ReporteVentas.rdlc" />
     <EmbeddedResource Include="ReportProducto.rdlc" />
   </ItemGroup>
   <ItemGroup>

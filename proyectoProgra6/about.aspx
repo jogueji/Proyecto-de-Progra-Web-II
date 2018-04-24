@@ -38,7 +38,7 @@
 					<h2><span>Contacto:</span></h2>
 					  <div class="event-grid">
 					  	<div class="event_img">
-						  <img src="images/reservaImg.png.png" title="post1" alt="">
+						  <img src="images/reservaImg.jpg" title="post1" alt="">
 					    </div>
 						<div class="event_desc">
 						 <h4><span>Reservas</span></h4>
@@ -49,7 +49,7 @@
 					  </div>
 					  <div class="event-grid">
 					  	<div class="event_img">
-						  <img src="images/menuImg.png" title="post1" alt="">
+						  <img src="images/menuImg.jpg" title="post1" alt="">
 					    </div>
 						<div class="event_desc">
 						<h4><span>Menu Especial</span></h4>
@@ -60,7 +60,7 @@
 					  </div>
 					  <div class="event-grid">
 					  	<div class="event_img">
-						  <img src="images/romanticaImg.png" title="post1" alt="">
+						  <img src="images/romanticaImg.jpg" title="post1" alt="">
 					    </div>
 						<div class="event_desc">
 							 <h4><span>Cena Romántica</span></h4>
