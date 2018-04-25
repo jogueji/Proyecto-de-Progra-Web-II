@@ -18,7 +18,7 @@ namespace proyectoProgra6
             if ((Session["tipoUsuario"]) != null)
             {
                 if ((int)(Session["tipoUsuario"]) != 1)
-                    Response.Write("<script languaje=javascript>window.alert('El usuario no tiene privilegios para accesar a esta pagina');window.location.href='login.aspx'</script>");
+                    Response.Write("<script languaje=javascript>window.alert('El usuario no tiene privilegios para accesar a esta pagina');window.location.href='inicio.aspx'</script>");
             }
             if (!IsPostBack)
                 RefrescarLista();
