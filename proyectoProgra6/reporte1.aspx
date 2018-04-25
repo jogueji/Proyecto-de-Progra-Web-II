@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    <<rsweb:ReportViewer ID="rptProducto" runat="server" Height="566px" Width="1036px" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
+    <<rsweb:ReportViewer ID="rptProducto" runat="server" Height="566px" Width="100%" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
         <LocalReport ReportPath="ReportProducto.rdlc">
             <DataSources>
                 <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSetJyJ" />

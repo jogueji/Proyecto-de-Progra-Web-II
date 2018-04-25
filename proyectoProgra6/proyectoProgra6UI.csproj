@@ -278,6 +278,7 @@
   <ItemGroup>
     <EmbeddedResource Include="ReporteMesas.rdlc" />
     <EmbeddedResource Include="ReporteTipoPago.rdlc" />
+    <EmbeddedResource Include="ReporteMesero.rdlc" />
     <EmbeddedResource Include="ReporteVentas.rdlc" />
     <EmbeddedResource Include="ReportProducto.rdlc" />
   </ItemGroup>

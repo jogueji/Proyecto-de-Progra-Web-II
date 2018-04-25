@@ -606,7 +606,7 @@
         <Image Name="Logo">
           <Source>Embedded</Source>
           <Value>logo</Value>
-          <Sizing>FitProportional</Sizing>
+          <Sizing>Fit</Sizing>
           <Top>0.34037cm</Top>
           <Left>2.53153cm</Left>
           <Height>1.98683cm</Height>

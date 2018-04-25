@@ -4,5 +4,25 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <rsweb:ReportViewer ID="ReportViewer1" runat="server"></rsweb:ReportViewer>
+    <div class="contact">
+        <div class="col_1_of_3 contact_1_of_3">
+            <div class="contact-form">
+                <p>Tipo de Producto</p>
+                <div>
+                    <span>
+                        <asp:DropDownList ID="ddlMesero" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlMesero_SelectedIndexChanged1" ></asp:DropDownList>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <<rsweb:ReportViewer ID="rptMesero" runat="server" Height="566px" Width="100%" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
+        <LocalReport ReportPath="ReporteMesero.rdlc">
+            <DataSources>
+                <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSetVentas" />
+            </DataSources>
+        </LocalReport>
+    </rsweb:ReportViewer>
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="proyectoProgra6.DataSetJyJTableAdapters.VentaTableAdapter"></asp:ObjectDataSource>
+    
 </asp:Content>
